@@ -9,7 +9,10 @@ async function visualizarInformacoesGlobais (){
    paragrafo.innerHTML = `Você sabia que o mundo tem
    ${dados.total_pessoas_mundo} de pessoas e que aproximadamente ${dados.total_pessoas_conectadas}
    estao conectadas em algum rede social e passam em média ${dados.tempo_médio} horas conectadas.`
-   console.log(paragrafo)
+   const container = document.getElementById('graficos-caontaiter')
+   container.appendChild(paragrafo)
+   console.log(dados.tempo_médio)
+   
 }
 visualizarInformacoesGlobais()
 {
@@ -17,3 +20,4 @@ visualizarInformacoesGlobais()
     "total_medio"; 2.38,
     "total_pessoas_mundo"; 7.888e9
 }
+paragrafo.innerHTML = `você sabia que o mundo tem <span>${dados.total_pessoas_mundo}</span> de pessoas e que aproximadamente <span>${dados.total_pessoas_conectadas}</span> estao conectadas em alguma rede social e passam em media <span>${dados.tempo_médio}</span> horas conectadas.`
