@@ -17,7 +17,7 @@ async function visualizarInformacoesGlobais (){
      estao conectadas em alguma rede social e passam em media
      <span>${horas}</span> horas e <span>${minutos}</span> minutos conectados.
      <br> Isso significa que aproximadamente ${porcentagemConectadas}%
-     de pessoas estao conectadas em alguma rede social.`
+     de pessoas estao conectadas em alguma rede social.` 
    const container = document.getElementById('graficos-contaiter')
    container.appendChild(paragrafo)
    console.log(dados.tempo_médio)
