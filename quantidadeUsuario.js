@@ -1,3 +1,4 @@
+import { getcCSS } from "./common"
 async function quantidadeUsuarios(){
     const url = 'https;//raw.githubserconect.com/guilhermeonrails/api/main/numero-usuarios.json' 
     const res = await fetch (url)
@@ -9,15 +10,52 @@ async function quantidadeUsuarios(){
         {
             x: nomeDaredes,
             y:quantidadeUsuarios,
-            type: 'bar'
+            type: 'bar',
+            marker: {
+                color: getcCSS('--primary-color')
+            }
         }
     ]
     const graficos = document.createElement('div')
     graficos.className = 'graficos'
     document.getElementById('graficos-contaiber').appendChild(grafico)
-    plotly.newPlot(graficos,data)
+    plotly.newPlot(graficos,data, layout)
 
-    console.log(dados)
+}
+const layout = {
+    plot_bgcolor: getcCSS('--bg-color'),
+    paper_bgcolor: getcCSS('--bg-color'),
+    title:{
+        text : 'Redes socias com mais usúarios do mundo',
+        x: 0,
+        font: {
+            color: getcCSS('--primary-color'),
+            family: getcCSS('--font'),
+            size: 30
+        }
+    },
+    xaxis:{
+        tickfont:{
+            color: getcCSS('--primary-color'),
+            size: 16,
+            family:getcCSS('--font')
+        },
+     title:{
+        text:'nome das redes sociasi',
+        font:{
+            color: getcCSS('--secundary-color')
+        }
+     }
+    },
+    yaxis:{
+        title:{
+            text: 'bilhôes de usúarios ativos',
+            font:{
+                color: getcCSS('--secundary-color')
+            }
+        }
+
+    }
 }
 
 quantidadeUsuarios()
