@@ -35,11 +35,11 @@ const layout = {
         }
     },
     xaxis:{
-        tickfont:{
             color: getcCSS('--primary-color'),
             size: 16,
             family:getcCSS('--font')
         },
+        tickfont:{ tickConfig,
      title:{
         text:'nome das redes sociasi',
         font:{
@@ -48,6 +48,7 @@ const layout = {
      }
     },
     yaxis:{
+        ickfont:{ tickConfig,
         title:{
             text: 'bilhôes de usúarios ativos',
             font:{
@@ -57,5 +58,5 @@ const layout = {
 
     }
 }
-
+}
 quantidadeUsuarios()
