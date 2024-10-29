@@ -7,4 +7,11 @@ const tickconfig = {
     size: 16,
     family: getcCSS('--font')
 }
-export {getcCSS,tickconfig}
+function criarGrafico(data, layout){
+    const grafico = document.createElement ('div')
+    grafico.className = 'grafico'
+    document.getElementByd('graficos-contaiter')
+    .appendchild(grafico)
+    Plotly.newPlot(grafico,data, layout)  
+}
+export {getcCSS,tickconfig,criarGrafico}
